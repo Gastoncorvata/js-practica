@@ -6,13 +6,15 @@ alert("Hola " + nombre  +" "+  apellido + " gracias por ingresar");
 
 //edad
 var edad = prompt ("Escribe tu edad");
+var edad = Number(edad);
 //imprime edad
-console.log("Tiene " + Number(edad) + " años");
+console.log("Tiene " +  edad + " años");
 
 //dni
 var dni = prompt ("Ingresa tu DNI");
+var dni = Number(dni)
 //imprime dni
-console.log("DNI numero " + Number(dni));
+console.log("DNI numero " + dni);
 
 //calcula y crea id
 var id = (dni - (dni - edad * 7));
