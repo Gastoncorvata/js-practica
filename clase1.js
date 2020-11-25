@@ -1,8 +1,8 @@
 //Nombre
 var nombre = prompt ("Escribe tu nombre, por favor");
-//imprime nombre
-console.log( "Usuario " + nombre);
-alert("Hola " + nombre + " gracias por ingresar");
+var apellido = prompt ("Apellido?");
+console.log( "Usuario " + nombre + apellido);
+alert("Hola " + nombre + apellido + " gracias por ingresar");
 
 //edad
 var edad = prompt ("Escribe tu edad");
@@ -21,7 +21,7 @@ console.log("registrado con el ID " + id);
 alert("tu ID de usuario es " + id);
 
 //finaliza
-console.log("Usuario " +  nombre +  " fue registrado con exito");
+console.log("Usuario " +  nombre +  apellido + " fue registrado con exito");
 alert("Registro finalizado con exito, muchas gracias")
 
 
