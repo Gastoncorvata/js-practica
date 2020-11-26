@@ -1,7 +1,7 @@
 //Numbers greater than 1000 show an Alert.
 
 var numeroId = prompt ("Escribe tu numero de ID");
-var numeroId = Number(numeroId);
+var numeroId = parseInt(numeroId);
 
 if (numeroId <= 1000) {
     console.log("El usuario " + numeroId + " a iniciado sesion");
@@ -15,7 +15,7 @@ else{
 //Between 10 and 50 years show Alert.
 
 var edad = prompt("Escriba su edad");
-var edad = Number(edad);
+var edad = parseInt(edad);
 
 if((edad >= 10) && (edad <= 50)){
     alert("Bienvenido al sistema");

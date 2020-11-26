@@ -6,13 +6,13 @@ alert("Hola " + nombre  +" "+  apellido + " gracias por ingresar");
 
 //edad
 var edad = prompt ("Escribe tu edad");
-var edad = Number(edad);
+var edad = parseInt(edad);
 //imprime edad
 console.log("Tiene " +  edad + " años");
 
 //dni
 var dni = prompt ("Ingresa tu DNI");
-var dni = Number(dni)
+var dni = parseInt(dni)
 //imprime dni
 console.log("DNI numero " + dni);
 
