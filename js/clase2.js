@@ -16,8 +16,9 @@ else{
 
 var edad = prompt("Escriba su edad");
 var edad = parseInt(edad);
+var condicion = (edad >= 10) && (edad <= 50)
 
-if((edad >= 10) && (edad <= 50)){
+if(condicion){
     alert("Bienvenido al sistema");
     console.log("Usuario " + numeroId + " dentro del rango de edad");
 }
