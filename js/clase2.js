@@ -1,7 +1,7 @@
 //Numbers greater than 1000 show an Alert.
 
-let numeroId = prompt ("Escribe tu numero de ID");
-let numeroId = parseInt(numeroId);
+var numeroId = prompt ("Escribe tu numero de ID");
+var numeroId = parseInt(numeroId);
 
 if (numeroId <= 1000) {
     console.log("El usuario " + numeroId + " a iniciado sesion");
@@ -14,8 +14,8 @@ else{
 
 //Between 10 and 50 years show Alert.
 
-let edad = prompt("Escriba su edad");
-let edad = parseInt(edad);
+var edad = prompt("Escriba su edad");
+var edad = parseInt(edad);
 
 if((edad >= 10) && (edad <= 50)){
     alert("Bienvenido al sistema");
@@ -28,7 +28,7 @@ else{
 
 //Set language with Hello.
 
-let idioma = prompt("Escriba   Hola    en el idioma que desea trabajar");
+var idioma = prompt("Escriba   Hola    en el idioma que desea trabajar");
 if(idioma == "Hola") {
     console.log("Trabajara en idioma Español.");
     alert("Idioma Español seleccionado.")
