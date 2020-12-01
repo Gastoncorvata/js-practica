@@ -2,7 +2,7 @@ var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domi
 
 for (var i=0; i<7; i++){
     if(i==6){
-        alert("Se termino la semana por hoy es " + dias[i]);
+        alert("Hoy es  " + dias[i] + "  septimo dia de la semana");
         console.log(dias[i] + " semana terminada");
     }else if(i % 2){
         alert(dias[i] + " es un dia par");
