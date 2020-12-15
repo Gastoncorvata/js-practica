@@ -1,0 +1,43 @@
+nav a :hover{
+    color: yellow;
+}
+.customNavbar{
+    color: yellowgreen;
+}
+header .row{
+    background-color: rgb(32, 173, 32);
+    padding-top: 75px;
+    padding-bottom: 25px;
+    height: 100vh;
+}
+header .row i{
+    color: yellow;
+    font-size: 250px;
+    padding-left: 25%;
+}
+header .row h1, h5{
+    color: white;
+}
+.producto1{
+    margin-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.producto2{
+    margin-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.producto3{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+footer{
+    background-color: rgb(24, 173, 32);
+    padding: 30px;
+}
+footer i{
+    color: black;
+    text-shadow: gold;
+    font-size: 30px;
+}
