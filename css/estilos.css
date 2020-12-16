@@ -41,3 +41,12 @@ footer i{
     text-shadow: gold;
     font-size: 30px;
 }
+.row .proyecto {
+    border-color: greenyellow;
+    color: white;
+}
+.row .proyecto:hover{
+    color: yellowgreen;
+    background-color: rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 8px 0 yellowgreen, 0 6px 20px 0 yellow;
+}
