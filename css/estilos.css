@@ -1,52 +1,71 @@
+body{
+    background: #20ad20;
+}
+
+#nosotros, #contacto{
+    color:#ffff00;
+}
+
+.card{
+    background: #ffff00;
+    box-shadow: 0 5px 9px 0 #20ad20, 0 7px 21px 0 #ffff00;
+}
+
+
 nav a :hover{
-    color: yellow;
+    color: #ffff00;
 }
 .customNavbar{
-    color: yellowgreen;
+    color: #20ad20;
 }
 header .row{
-    background-color: rgb(32, 173, 32);
+    background-color: #20ad20;
     padding-top: 75px;
     padding-bottom: 25px;
     height: 100vh;
 }
 header .row i{
-    color: yellow;
+    color: #ffff00;
     font-size: 250px;
     padding-left: 25%;
 }
 header .row h1, h5{
     color: white;
 }
-.producto1{
+.producto1, .producto2, .producto4, .producto5 {
     margin-right: 20px;
     margin-top: 25px;
     margin-bottom: 25px;
 }
-.producto2{
-    margin-right: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-.producto3{
+
+.producto3, .producto6 {
     margin-top: 25px;
     margin-bottom: 25px;
 }
 footer{
-    background-color: rgb(24, 173, 32);
+    background-color: #20ad20;
     padding: 30px;
 }
 footer i{
     color: black;
-    text-shadow: gold;
+    text-shadow: #ffff00;
     font-size: 30px;
 }
 .row .proyecto {
-    border-color: greenyellow;
+    border-color: #20ad20;
     color: white;
 }
 .row .proyecto:hover{
     color: yellowgreen;
     background-color: rgba(0, 0, 0, .3);
-    box-shadow: 0 4px 8px 0 yellowgreen, 0 6px 20px 0 yellow;
+    box-shadow: 0 4px 8px 0 #20ad20, 0 6px 20px 0 #ffff00;
+}
+#carrito {
+    z-index: 9999;
+}
+.modal {
+    z-index: 999;
+}
+#comandaPedido{
+    width: 650px;
 }
