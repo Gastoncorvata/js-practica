@@ -1,6 +1,9 @@
 body{
     background: #1b5407;
 }
+a{
+    text-decoration: none;
+}
 
 .navbar {
     background: #1b5407;
@@ -58,6 +61,7 @@ footer i{
     color: white;
     font-weight: bold;
     margin-bottom: 2rem;
+    margin-top: 60px;
 }
 
 .titulo{
@@ -80,4 +84,22 @@ footer i{
 
 .blanco{
     color: rgba(242, 243, 183, 0.877);
+}
+footer, i {
+    bottom: 0;
+    background:  #35352aa2;
+    color: #ffff00;
+}
+footer a:hover{
+    color:gold;
+}
+.amarillo{
+    color: #ffff00;
+}
+#community{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#store{
+    margin: 30px;
 }
