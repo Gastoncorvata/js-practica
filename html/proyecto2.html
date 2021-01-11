@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
+    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!--solapa-->
+    <title>SANFRAN BURGER</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+</head>
+<body>
+    <!--menuBar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="sanfran text-center" class="navbar-brand" href="../index.html">Sanfran    <i class="fas fa-hamburger" aria-hidden="true"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item amarillo">
+            <a class="nav-link active" href="#lista-productos">Burgers</a>
+            </li>
+            <li class="nav-item dropdown amarillo">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Promos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#bebida"> Agrega  Bebida</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#postre"> Agrega  Postre</a></li>
+                
+            </ul>
+            </li>
+            <li class="nav-item amarillo">
+            <a class="nav-link" aria-current="page" href="#">Story</a>
+            </li>
+            
+            <li class="nav-item amarillo">
+            <a class="nav-link" href="#">Community</a>
+            </li>
+
+            </li>
+            <li class="nav-item amarillo">
+            <a class="nav-link" href="#">TeamStore</a>
+            </li>
+
+            <li class="nav-item dropdown amarillo">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="carrito">
+                <li>
+                    <table class="table">
+                        <thead class="dropdown-item" id="lista-carrito">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Fushh!</th>
+                            </tr>
+                        </thead>
+                        <tbody class="dropdown-item">
+                            <!--Aca se agregan los items desde Js-->
+                        </tbody>
+                    </table>
+                </li>
+                
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-center amarillo" href="#"> Vaciar Carrito </a></li>
+            </ul>
+            </li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit"> <i class="bi bi-search"> </i> </button>
+        </form>
+        </div>
+    </div>
+    </nav>
+    <!--Header-->
+
+    <div class="container">
+        <div class="hero">
+            <div class="text-center iconoBurger">
+                <i class="fas fa-hamburger" aria-hidden="true"></i>
+            </div>
+            <div class="text-center titulo">
+                <p>Sanfran</p>
+            </div>
+            <div class="text-center subtitulo">
+                <p>Smashing Burgers</p>
+                <p>Since 2020</p>
+            </div>
+        </div>
+    </div>
+    <!--Burger-->
+
+    <div class="container my-5 py-5" id="lista-productos">
+        <div class="row justify-content-around">
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burguer1.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Springfield Bacon</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
+                <p class="card-text text-justify blanco">
+                Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger3.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Wisconsin Butter</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
+                <p class="card-text text-justify blanco">
+                Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger4.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Chicago Onions</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-850 / Carbs-22 / Sodium-760</h6>
+                <p class="card-text text-justify blanco">
+                Two slices of Kraft American Cheese melted between two freshly grilled patties on a soft, toasted bun.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger5.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">American Burger</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-850 / Carbs-22 / Sodium-760</h6>
+                <p class="card-text text-justify blanco">
+                Two slices of Kraft American Cheese melted between two freshly grilled patties on a soft, toasted bun.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burguer1.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Springfield Bacon</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
+                <p class="card-text text-justify blanco">
+                Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger3.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Wisconsin Butter</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
+                <p class="card-text text-justify blanco">
+                Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger4.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Springfield Bacon</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
+                <p class="card-text text-justify blanco">
+                Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/burger5.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Wisconsin Butter</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
+                <p class="card-text text-justify blanco">
+                Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+        </div>
+            <!--Combo-->
+        <div class="row justify-content-around" id="bebida">
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/coca.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Coca-Cola 1L</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Zero / Ligth / Regular </h6>
+                <p class="card-text text-justify blanco">
+                Botella plastico de 1ooo cc. Linea Coca-Cola. Sprite, Fanta, Coca, Cepita.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="../img/beer.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Cerveza 500 cc</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Corona / Estrella / Sol </h6>
+                <p class="card-text text-justify blanco">
+                Botella vidrio o lata de 500 cc. Todos las variantes de Corona, Estrella o Sol.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+            <div class="card col-12 col-md-3 py-4" style="width: 16rem;" id="postre">
+                <img src="../img/franui.png" class="card-img-top" alt="Burger image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">Fra-nui</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Chocolate Amargo / Chocolate con Leche</h6>
+                <p class="card-text text-justify blanco">
+                Frambuesas bañadas en chocolate de Bariloche.</p>
+                <a href="#" class="btn btn-outline-light">Agregar  <i class="fas fa-shopping-basket"></i></a>
+                </div>
+            </div>
+    </div>
+
+
+    <!--Story-->
+
+    <!--Community-->
+
+    <!--Store-->
+    
+    <!--scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="../js/proyecto2.js"></script>
+</body>
+</html>

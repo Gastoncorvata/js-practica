@@ -1,71 +1,83 @@
 body{
-    background: #20ad20;
+    background: #1b5407;
 }
 
-#nosotros, #contacto{
-    color:#ffff00;
+.navbar {
+    background: #1b5407;
 }
 
 .card{
-    background: #ffff00;
-    box-shadow: 0 5px 9px 0 #20ad20, 0 7px 21px 0 #ffff00;
+    background: #35352aa2;
+    box-shadow: 0 5px 9px 0 #3bb411, 0 7px 21px 0 #ffff00;
 }
 
 
-nav a :hover{
-    color: #ffff00;
+a {
+    text-decoration: none;
 }
+
 .customNavbar{
-    color: #20ad20;
-}
-header .row{
-    background-color: #20ad20;
-    padding-top: 75px;
-    padding-bottom: 25px;
-    height: 100vh;
-}
-header .row i{
-    color: #ffff00;
-    font-size: 250px;
-    padding-left: 25%;
-}
-header .row h1, h5{
-    color: white;
-}
-.producto1, .producto2, .producto4, .producto5 {
-    margin-right: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    color: #3bb411 !important;
 }
 
-.producto3, .producto6 {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
 footer{
     background-color: #20ad20;
     padding: 30px;
 }
+
 footer i{
     color: black;
     text-shadow: #ffff00;
     font-size: 30px;
 }
+
 .row .proyecto {
-    border-color: #20ad20;
+    border-color: #3bb411;
     color: white;
 }
+
 .row .proyecto:hover{
     color: yellowgreen;
     background-color: rgba(0, 0, 0, .3);
-    box-shadow: 0 4px 8px 0 #20ad20, 0 6px 20px 0 #ffff00;
+    box-shadow: 0 4px 8px 0 #3bb411, 0 6px 20px 0 #ffff00;
 }
-#carrito {
-    z-index: 9999;
+
+.sanfran{
+    font-family: 'Lobster', cursive;
+    color: #ffff00;
+    font-size: 20px;
 }
-.modal {
-    z-index: 999;
+
+.sanfran:hover{
+    font-family: 'Lobster', cursive;
+    color: rgb(84, 255, 16);
+    font-size: 20px;
 }
-#comandaPedido{
-    width: 650px;
+
+.hero{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.titulo{
+    font-size: 3rem;
+    font-family: "Lobster";
+}
+
+.subtitulo{
+        font-size: 1rem;
+}
+
+.iconoBurger{
+    font-size: 12rem;
+    color: #ffff00;
+}
+
+.card {
+    margin-top: 25px;
+}
+
+.blanco{
+    color: rgba(242, 243, 183, 0.877);
 }
