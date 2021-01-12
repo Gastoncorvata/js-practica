@@ -15,23 +15,8 @@ a{
 }
 
 
-a {
-    text-decoration: none;
-}
-
 .customNavbar{
     color: #3bb411 !important;
-}
-
-footer{
-    background-color: #20ad20;
-    padding: 30px;
-}
-
-footer i{
-    color: black;
-    text-shadow: #ffff00;
-    font-size: 30px;
 }
 
 .row .proyecto {
@@ -85,7 +70,7 @@ footer i{
 .blanco{
     color: rgba(242, 243, 183, 0.877);
 }
-footer, i {
+footer i {
     bottom: 0;
     background:  #35352aa2;
     color: #ffff00;
@@ -102,4 +87,10 @@ footer a:hover{
 }
 #store{
     margin: 30px;
+}
+.rojo{
+    font-size: 17px;
+}
+.rojo:hover{
+    color: red;
 }
