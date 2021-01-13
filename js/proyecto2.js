@@ -4,8 +4,8 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 
-
 let articulosCarrito = [];
+
 
 /* Listeners */
 listaProductos.addEventListener("click", agregarProducto);
