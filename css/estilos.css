@@ -89,9 +89,9 @@ footer a:hover{
     margin: 30px;
 }
 .rojo{
-    color: gray;
+    color:#1b54077a;
     font-size: 17px;
 }
 .rojo:hover{
-    color: red;
+    color: rgba(255, 0, 0, 0.692);
 }

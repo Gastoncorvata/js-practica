@@ -95,5 +95,39 @@ const dataProductos = [
 		precio: "270",
 		id: "11",
 	},
+	{
+		imagen: "../img/reme1.png",
+		nombre: "Remera Negra SF",
+		tipo: "XS / S / M / L / XL",
+		description: "Remera de algodon 100% color negra con logo, todos los talles",
+		precio: "850",
+		id: "12",
+	},
+	{
+		imagen: "../img/reme2.png",
+		nombre: "Remera verde SF",
+		tipo: "XS / S / M / L / XL",
+		description: "Remera de algodon 100% color negra con logo, todos los talles.",
+		precio: "850",
+		id: "13",
+	},
+	{
+		imagen: "../img/reme3.png",
+		nombre: "Remera Blanca SF",
+		tipo: "XS / S / M / L / XL",
+		description: "Remera de algodon 100% color negra con logo, todos los talles.",
+		precio: "800",
+		id: "14",
+	},
+	{
+		imagen: "../img/barbi1.png",
+		nombre: "Barbijo Negro SF",
+		tipo: " S / M / L ",
+		description: "Barbijo de algodon 100% color negra con logo, todos los talles.",
+		precio: "250",
+		id: "15",
+	},
 ];
+
+
 

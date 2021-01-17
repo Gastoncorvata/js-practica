@@ -4,8 +4,16 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 
-let articulosCarrito = [];
+$(".nosotroStory").fadeIn(6000, animacionFade);
 
+function animacionFade() {
+	$(".nosotroStory").hide(6000, animacionFade2);
+	function animacionFade2(){
+		$(".nosotroStory").slideDown(6000);
+	}
+}
+
+let articulosCarrito = [];
 
 /* Listeners */
 listaProductos.addEventListener("click", agregarProducto);
@@ -13,17 +21,15 @@ listaProductos.addEventListener("click", agregarProducto);
 //carrito.addEventListener("click", quitarProducto);
 $("#carrito").click(carrito, quitarProducto);
 
-
 //vaciarCarrito.addEventListener("click", borrarCarrito);
 $("#vaciar-carrito").click(vaciarCarrito, borrarCarrito);
 
 document.addEventListener("DOMContentLoaded", () => {
 	articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    insertarCarritoHTML();
+	insertarCarritoHTML();
 });
 
 $("#formulario").on("submit", filtrarProductos);
-
 
 //Funtions
 
@@ -64,7 +70,9 @@ function filtrarProductos(e) {
 
 	const busqueda = $("#buscador").val();
 
-	const resultado = dataProductos.filter(producto => producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
+	const resultado = dataProductos.filter((producto) =>
+		producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
+	);
 
 	limpiarProductos();
 	cargarListaProductos(resultado);
@@ -111,18 +119,16 @@ function borrarCarrito() {
 	guardarStorage();
 }
 
-
 function quitarProducto(e) {
-    e.preventDefault();
+	e.preventDefault();
 
 	if (e.target.classList.contains(`borrar-producto`)) {
-        const productoId = e.target.getAttribute("data-id");
+		const productoId = e.target.getAttribute("data-id");
 		articulosCarrito = articulosCarrito.filter((producto) => producto.id != productoId);
 		insertarCarritoHTML();
 		guardarStorage();
 	}
 }
-
 
 function obtenerDatos(producto) {
 	const productoAgregado = {
@@ -130,9 +136,9 @@ function obtenerDatos(producto) {
 		precio: producto.querySelector(".precio span").textContent,
 		id: producto.querySelector("a").getAttribute("data-id"),
 		cantidad: 1,
-    };
-    
-    const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
+	};
+
+	const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
 
 	if (existe) {
 		/* Producto ya existente */
@@ -152,7 +158,6 @@ function obtenerDatos(producto) {
 	insertarCarritoHTML();
 	guardarStorage();
 }
-
 
 function guardarStorage() {
 	localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
