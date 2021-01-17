@@ -95,3 +95,9 @@ footer a:hover{
 .rojo:hover{
     color: rgba(255, 0, 0, 0.692);
 }
+
+#pagar :hover {
+    color: rgb(4, 94, 228);
+    font-weight: 900;
+    background-color: #09a0e63b;
+}
