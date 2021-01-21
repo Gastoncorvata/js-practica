@@ -4,6 +4,7 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 
+
 $(".nosotroStory").fadeIn(6000, animacionFade);
 
 function animacionFade() {
@@ -15,24 +16,47 @@ function animacionFade() {
 
 let articulosCarrito = [];
 
-/* Listeners */
-listaProductos.addEventListener("click", agregarProducto);
+let dataProductos;
 
-//carrito.addEventListener("click", quitarProducto);
+
+
+/* Listeners */
+	listaProductos.addEventListener("click", agregarProducto);
+
 $("#carrito").click(carrito, quitarProducto);
 
-//vaciarCarrito.addEventListener("click", borrarCarrito);
 $("#vaciar-carrito").click(vaciarCarrito, borrarCarrito);
 
 document.addEventListener("DOMContentLoaded", () => {
 	articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 	insertarCarritoHTML();
+
+	//Llamada a BD local con AJAX
+	$.ajax({
+		url: "/js/productos.json",
+		success: function (data, status, xhr) {
+			console.log("Enlace correcto");
+			dataProductos = data;
+			cargarListaProductos(data);
+		},
+		error: function (xhr, status, errorThrown) {
+			console.log("Enlace a Bd .json Inexistente");
+		},
+	});
 });
 
 $("#formulario").on("submit", filtrarProductos);
 
+$("#pagar").click("pagar", pagoTarjeta)
+
+
 
 //Funtions
+
+function pagoTarjeta(){
+	console.log("se realizara el pago con tarjeta Visa");
+	window.open("../html/pagar.html");
+}
 
 function cargarListaProductos(productos) {
 	productos.forEach((producto, index) => {
@@ -105,6 +129,7 @@ function filtrarProductos(e) {
 }
 renderProductos();
 */
+
 
 function agregarProducto(e) {
 	e.preventDefault();
@@ -199,6 +224,7 @@ function limpiarCarrito() {
 		contenedorCarrito.removeChild(contenedorCarrito.firstChild);
 	}
 }
+
 function limpiarProductos() {
 	while (listaProductos.firstChild) {
 		listaProductos.removeChild(listaProductos.firstChild);
