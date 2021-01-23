@@ -1,4 +1,5 @@
 
+
 window.Mercadopago.setPublishableKey("YOUR_PUBLIC_KEY");
 
 window.Mercadopago.getIdentificationTypes();

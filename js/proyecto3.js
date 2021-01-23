@@ -4,7 +4,6 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 
-
 $(".nosotroStory").fadeIn(6000, animacionFade);
 
 function animacionFade() {
@@ -18,10 +17,8 @@ let articulosCarrito = [];
 
 let dataProductos;
 
-
-
 /* Listeners */
-	listaProductos.addEventListener("click", agregarProducto);
+listaProductos.addEventListener("click", agregarProducto);
 
 $("#carrito").click(carrito, quitarProducto);
 
@@ -30,14 +27,12 @@ $("#vaciar-carrito").click(vaciarCarrito, borrarCarrito);
 document.addEventListener("DOMContentLoaded", () => {
 	articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 	insertarCarritoHTML();
-
 	//Llamada a BD local con AJAX
 	$.ajax({
 		url: "/js/productos.json",
 		success: function (data, status, xhr) {
-			console.log("Enlace correcto");
+			console.log("Enlace a BD correcto");
 			dataProductos = data;
-			cargarListaProductos(data);
 		},
 		error: function (xhr, status, errorThrown) {
 			console.log("Enlace a Bd .json Inexistente");
@@ -45,20 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
+
+
 $("#formulario").on("submit", filtrarProductos);
 
-$("#pagar").click("pagar", pagoTarjeta)
-
-
+$("#pagar").click("pagar", pagoTarjeta);
 
 //Funtions
 
-function pagoTarjeta(){
+function pagoTarjeta() {
 	console.log("se realizara el pago con tarjeta Visa");
 	window.open("../html/pagar.html");
 }
 
 function cargarListaProductos(productos) {
+	console.log("Se ejecuta cargarListaProductos");
 	productos.forEach((producto, index) => {
 		const { nombre, imagen, precio, id, tipo, description } = producto;
 
@@ -103,36 +99,9 @@ function filtrarProductos(e) {
 	cargarListaProductos(resultado);
 }
 
-/*function renderProductos() {
-	dataProductos.forEach((productos)=> {
-		const {imagen, nombre, tipo, description, precio, cantidad, id} = productos;
-		const fila = document.createElement("div");
-		fila.innerHTML = `
-		
-		<div class="row justify-content-between">
-			<div class="card col-12 col-md-3 py-4" style="width: 16rem;">
-				<img src=${imagen} class="card-img-top" alt="Burger image">
-				<div class="card-body">
-					<h4 class="card-title text-justify text-center blanco">${nombre}</h4>
-					<h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
-					<p class="card-text text-justify blanco">
-					Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
-					<p class="precio blanco"> $ <span>${precio}</span></p>
-					<a href="#" class="btn btn-outline-light agregar-carrito" data-id="${id}">Agregar  <i class="fas fa-shopping-basket"></i></a>
-				</div>
-			<div>
-		</div>
-		`;
-
-		listaProductos.appendChild(fila)
-	})
-}
-renderProductos();
-*/
-
-
 function agregarProducto(e) {
 	e.preventDefault();
+
 	if (e.target.classList.contains("agregar-carrito")) {
 		const productoSeleccionado = e.target.parentElement.parentElement;
 		obtenerDatos(productoSeleccionado);
@@ -200,7 +169,6 @@ function insertarCarritoHTML() {
 
 		const row = document.createElement("tr");
 		row.innerHTML = `
-
 			<td>
 				${nombre}
 			</td>
