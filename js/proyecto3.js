@@ -3,15 +3,12 @@ const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
+//const minusProducto = document.querySelector("#menosProducto");
+//const masProducto = document.querySelector(".masProducto");
+
 
 $(".nosotroStory").fadeIn(6000, animacionFade);
 
-function animacionFade() {
-	$(".nosotroStory").hide(6000, animacionFade2);
-	function animacionFade2() {
-		$(".nosotroStory").slideDown(6000);
-	}
-}
 
 let articulosCarrito = [];
 
@@ -40,13 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-
-
 $("#formulario").on("submit", filtrarProductos);
 
 $("#pagar").click("pagar", pagoTarjeta);
 
-//Funtions
+// ---------------  agregar y restar producto usando (+) y (-).
+
+//$("#menosProducto").click(minusProducto, restarProducto);
+//$(".masProducto").click(masProducto, sumarProducto);
+
+//minusProducto.addEventListener("click",restarProducto);
+//masProducto.addEventListener("click", sumarProducto);
+
+/*function restarProducto() {
+	console.log("menosProducto");
+	alert("restar");
+}
+function sumarProducto(){
+	console.log("masProducto");
+}*/
+
+// Funciones
+
+
+
+function animacionFade() {
+	$(".nosotroStory").hide(6000, animacionFade2);
+	function animacionFade2() {
+		$(".nosotroStory").slideDown(6000);
+	}
+}
 
 function pagoTarjeta() {
 	console.log("se realizara el pago con tarjeta Visa");
@@ -133,13 +153,13 @@ function obtenerDatos(producto) {
 		cantidad: 1,
 	};
 
-	const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
-
-	if (existe) {
+	function comprobar(){
+		const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
+		if (existe) {
 		/* Producto ya existente */
 		const productos = articulosCarrito.map((producto) => {
 			if (producto.id === productoAgregado.id) {
-				producto.cantidad++;
+				producto.cantidad ++;
 				return producto;
 			} else {
 				return producto;
@@ -150,6 +170,8 @@ function obtenerDatos(producto) {
 		/* Agrego el producto al carrito */
 		articulosCarrito.push(productoAgregado);
 	}
+	}
+	comprobar();
 	insertarCarritoHTML();
 	guardarStorage();
 }
@@ -176,7 +198,7 @@ function insertarCarritoHTML() {
 				${precio}
 			</td>
 			<td>
-				${cantidad}
+				<a href="#" class="" id="menosProducto"><i class="fas fa-minus menosProducto" data-id="${id}" ></i></a>  ${cantidad}  <a href="#" class="" ><i class="fas fa-plus masProducto"></i></a>
 			</td>
 			<td>
 				<a href="#" class="" > <i class="far fa-trash-alt borrar-producto rojo" data-id="${id}"></i> </a>

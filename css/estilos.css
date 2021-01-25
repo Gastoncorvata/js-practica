@@ -94,10 +94,21 @@ footer a:hover{
 }
 .rojo:hover{
     color: rgba(255, 0, 0, 0.692);
+    text-shadow: grey 2px 2px 3px;
 }
 
 #pagar :hover {
     color: rgb(4, 94, 228);
     font-weight: 900;
     background-color: #09a0e63b;
+}
+
+.menosProducto:hover{
+    color: rgba(206, 22, 22, 0.925);
+    text-shadow: rgb(54, 8, 8) 3px 3px 3px;
+}
+
+.masProducto:hover{
+    color: rgb(9, 165, 9);
+    text-shadow: #193018ef 3px 3px 3px;
 }
