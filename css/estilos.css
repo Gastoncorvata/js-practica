@@ -112,3 +112,67 @@ footer a:hover{
     color: rgb(9, 165, 9);
     text-shadow: #193018ef 3px 3px 3px;
 }
+/* Seccion Sorteo */
+
+    .sorteo h2 {
+    color:  #ffff00;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sorteo h5 {
+    color:  #ffff00;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.sorteo h2 i{
+    margin-left: 1rem;
+}
+
+    .contador {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+
+    .contador li {
+    flex: 0 0 calc(50% - 3rem);
+    list-style: none;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 4rem; }
+    @media (min-width: 768px) {
+        .contador li {
+        flex: 0 0 calc(25% - 2rem); } }
+
+    .numero {
+    color: yellow;
+    font-size: 3rem;
+    margin: 0;
+    font-family: 'Oswald', sans-serif; }
+    @media (min-width: 768px) {
+        .numero {
+        font-size: 7rem; } }
+
+    .numero p{
+        color: #e9eb81c4;
+    }
+
+    .btn-whatsapp {
+        display:block;
+        font-size: 4rem;
+        color: rgba(249, 250, 201, 0.897);
+        position: fixed;
+        right:20px;
+        bottom:20px;
+        border-radius:50%;
+        line-height:80px;
+        text-align:center;
+        z-index:999;
+}
+    .btn-whatsapp :hover{
+        color: #ffff00;
+    }

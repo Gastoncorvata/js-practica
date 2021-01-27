@@ -6,11 +6,9 @@ const vaciarCarrito = document.querySelector("#vaciar-carrito");
 //const minusProducto = document.querySelector("#menosProducto");
 //const masProducto = document.querySelector(".masProducto");
 
-
 let articulosCarrito = [];
 
 let dataProductos;
-
 
 /* Listeners */
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,16 +63,16 @@ function sumarProducto(){
 
 // Funciones
 
-	//llamada a BD local con Fetch - async Function
-	async function consultarBd(){
-		const resultado = await fetch("../js/productos.json");
-		let datos = await resultado.json();
-		dataProductos = datos;
-	}
+//llamada a BD local con Fetch - async Function
+async function consultarBd() {
+	const resultado = await fetch("../js/productos.json");
+	let datos = await resultado.json();
+	dataProductos = datos;
+}
 
 function cargarBd() {
-		consultarBd();
-	}
+	consultarBd();
+}
 
 function animacionFade() {
 	$(".nosotroStory").hide(6000, animacionFade2);
@@ -168,23 +166,23 @@ function obtenerDatos(producto) {
 		cantidad: 1,
 	};
 
-	function comprobar(){
+	function comprobar() {
 		const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
 		if (existe) {
-		/* Producto ya existente */
-		const productos = articulosCarrito.map((producto) => {
-			if (producto.id === productoAgregado.id) {
-				producto.cantidad ++;
-				return producto;
-			} else {
-				return producto;
-			}
-		});
-		articulosCarrito = [...productos];
-	} else {
-		/* Agrego el producto al carrito */
-		articulosCarrito.push(productoAgregado);
-	}
+			/* Producto ya existente */
+			const productos = articulosCarrito.map((producto) => {
+				if (producto.id === productoAgregado.id) {
+					producto.cantidad++;
+					return producto;
+				} else {
+					return producto;
+				}
+			});
+			articulosCarrito = [...productos];
+		} else {
+			/* Agrego el producto al carrito */
+			articulosCarrito.push(productoAgregado);
+		}
 	}
 	comprobar();
 	insertarCarritoHTML();
@@ -235,3 +233,10 @@ function limpiarProductos() {
 		listaProductos.removeChild(listaProductos.firstChild);
 	}
 }
+// Cuenta Regresiva
+$('.contador').countdown('2021/02/20 10:00:00', function(event){
+    $('#dias').html(event.strftime('%D'));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+});
