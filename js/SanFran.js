@@ -1,119 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
-    <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
-    <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos.css">
 
-    <!--solapa-->
-    <title>SANFRAN BURGER</title>
-    <link rel="shortcut icon" href="../img/favicon.ico">
+window.addEventListener("hashchange", router);
+document.addEventListener("DOMContentLoaded", router);
 
-</head>
-<body>
-    <!--menuBar-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
-        <a class="sanfran text-center" class="navbar-brand" href="../html/proyectoFinal.html">Sanfran    <i class="fas fa-hamburger" aria-hidden="true"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item amarillo">
-            <a class="nav-link active" href="#lista-productos">Burgers</a>
-            </li>
-            <li class="nav-item dropdown amarillo">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Promos
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#bebida"> Agrega  Bebida</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#postre"> Agrega  Postre</a></li>
-                
-            </ul>
-            </li>
-
-            </li>
-            <li class="nav-item amarillo">
-            <a class="nav-link" href="#store">TeamStore</a>
-            </li>
-
-            <li class="nav-item amarillo">
-            <a class="nav-link" aria-current="page" href="#story">Story</a>
-            </li>
-
-            <li class="nav-item amarillo">
-            <a class="nav-link" href="#community">Community</a>
-            </li>
-
-            <li class="nav-item dropdown amarillo">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
-                <i class="fas fa-shopping-cart imgCarrito"></i>
-            </a>
-            <ul class="dropdown-menu justify-content-center" aria-labelledby="navbarDropdown" id="carrito">
-                <li>
-                    <table class="table text-center px-3"  id="lista-carrito">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Fushh!</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            <!--Aca se agregan los items desde Js-->
-                        </tbody>
-                    </table>
-                </li>
-                
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-center" href="#" id="vaciar-carrito"> Vaciar Carrito </a></li>
-                <li><a class="dropdown-item text-center" href="#" id="pagar" data-toggle="modal" data-target="#exampleModal"> <i class="fab fa-cc-visa"></i>      Pagar </a></li>
-            </ul>
-            </li>
-        </ul>
-        <form class="d-flex" id="formulario">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="buscador">
-            <button class="btn btn-outline-light " type="submit" id="submit-buscador"> <i class="bi bi-search"> </i> </button>
-        </form>
-        </div>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>aca hay que poner la tarjeta</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </nav>
-
-    <!--Header-->
-    <div class="container text-center">
+/*-------------------------------------Components---------------------------------------*/
+const HomeComponent = {
+    render: () => {
+        return `
+        <!--Header-->
+    <div class="container text-center py-5">
         <div class="hero">
             <div class="text-center iconoBurger">
                 <i class="fas fa-hamburger" aria-hidden="true"></i>
@@ -129,8 +23,14 @@
         <p class="text-center blanco">Jueves a Lunes <strong> walk-up 19:30  to   23:30PM <i class="far fa-clock"></i></strong>  </p>
         <p class="text-center blanco">Martes y Miercoles  <strong>CLOSED  <i class="far fa-calendar-times"></i></strong> </p>
     </div>
+        `
+    }
+}
 
-    <!--Burger-->
+const BurgerComponent = {
+	render: () => {
+		return `
+        <!--Burger-->
     <div class="container my-5 py-5" id="lista-productos">
         <div class="row justify-content-around">
             <div class="card col-12 col-md-3 py-4" style="width: 16rem;">
@@ -140,8 +40,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
                 <p class="card-text text-justify blanco">
                 Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>570</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>570</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
         data-placement="top" title="Tapa Arterias" data-id="1">Agregar  <i class="fas fa-shopping-basket"></i>
                 </a>
                 </div>
@@ -153,8 +53,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
                 <p class="card-text text-justify blanco">
                 Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
-                <p class="precio blanco text-center fs-4"> $ <span>560</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip" data-placement="top" title="Wisconsin" data-id="2">Agregar  <i class="fas fa-shopping-basket"></i>
+                <p class="precio blanco"> $ <span>560</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip" data-placement="top" title="Wisconsin" data-id="2">Agregar  <i class="fas fa-shopping-basket"></i>
                 </a>
                 </div>
             </div>
@@ -165,8 +65,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-850 / Carbs-22 / Sodium-760</h6>
                 <p class="card-text text-justify blanco">
                 Two slices of Kraft American Cheese melted between two freshly grilled patties on a soft, toasted bun.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>550</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>550</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Con Cebollas" data-id="3">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -178,8 +78,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-850 / Carbs-22 / Sodium-760</h6>
                 <p class="card-text text-justify blanco">
                 Two slices of Kraft American Cheese melted between two freshly grilled patties on a soft, toasted bun.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>540</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>540</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Bien Yanki" data-id="4">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -191,8 +91,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
                 <p class="card-text text-justify blanco">
                 Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>530</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>530</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Bacon Burger" data-id="5">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -202,10 +102,10 @@
                 <div class="card-body">
                 <h4 class="card-title text-justify text-center blanco">Wisconsin Butter</h4>
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
-                <p class="card-text text-justify blanco ">
+                <p class="card-text text-justify blanco">
                 Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
-                <p class="precio blanco text-center fs-4"> $ <span>500</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>500</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Wisconsin"  data-id="6">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -217,8 +117,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-980 / Carbs-40 / Sodium-1050</h6>
                 <p class="card-text text-justify blanco">
                 Our regular two-patty burger, layered with four pieces of crispy, sweet applewood-smoked bacon.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>490</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>490</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Bacon Burger" data-id="7">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -230,15 +130,22 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Calories-930 / Carbs-38 / Sodium-950</h6>
                 <p class="card-text text-justify blanco">
                 Wide selection of beef, pork, chicken, seafood, or veggie patties. regular two-patty burger</p>
-                <p class="precio blanco text-center fs-4"> $ <span>480</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>480</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Wisconsin" data-id="8">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
             </div>
         </div>
-            <!-- Combos -->
-        <div class="row justify-content-around" id="bebida">
+    </div>`;
+	},
+};
+
+const PromosComponent = {
+	render: () => {
+		return `
+        <!-- Promociones -->
+        <div class="row justify-content-around py-5" id="bebida">
             <div class="card col-12 col-md-4 py-4" style="width: 16rem;">
                 <img src="../img/coca.png" class="card-img-top" alt="Coca image">
                 <div class="card-body">
@@ -246,8 +153,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Zero / Ligth / Regular </h6>
                 <p class="card-text text-justify blanco">
                 Botella plastico de 1ooo cc. Linea Coca-Cola. Sprite, Fanta, Coca, Cepita.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>150</span></p>
-                <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>150</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Gaseosa" data-id="9">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -259,8 +166,8 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Corona / Estrella / Sol </h6>
                 <p class="card-text text-justify blanco">
                 Botella vidrio o lata de 500 cc. Todos las variantes de Corona, Estrella o Sol.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>150</span></p>
-                <a href="#" class=" mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>150</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Birra" data-id="10">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
@@ -272,15 +179,22 @@
                 <h6 class="card-subtitle mb-2 text-muted text-center">Chocolate Amargo / Chocolate con Leche</h6>
                 <p class="card-text text-justify blanco">
                 Frambuesas bañadas en chocolate de Bariloche.</p>
-                <p class="precio blanco text-center fs-4"> $ <span>270</span></p>
-                <a href="#" class=" mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                <p class="precio blanco"> $ <span>270</span></p>
+                <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Frambuesas" data-id="11">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 
                 </div>
             </div>
         </div>
+        `;
+	},
+};
+
+const TeamStoreComponent = {
+	render: () => {
+		return `
         <!--TeamStore-->
-        <h2 class="text-center fs-lg-1 fw-bolder fst-italic blanco" id="store">INSID<i class="fab fa-etsy"></i><i class="far fa-registered"></i></h2>
+        <h2 class="text-center fs-lg-1 fw-bolder fst-italic blanco py-5" id="store">INSID<i class="fab fa-etsy"></i><i class="far fa-registered"></i></h2>
         <div class="row justify-content-around" id="teamStore">
             <div class="card col-6 col-lg-3 " style="width: 15rem;">
                 <img src="../img/reme1.png" class="card-img-top" alt="...">
@@ -288,8 +202,8 @@
                     <h4 class="card-title blanco">Remera Negra SF</h4>
                     <h6 class="card-subtitle mb-2 text-muted text-center">XS / S / M / L / XL</h6>
                     <p class="card-text blanco">Remera de algodon 100% color negra con logo, todos los talles</p>
-                    <p class="precio blanco text-center fs-4"> $ <span>850</span></p>
-                    <a href="#" class="mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                    <p class="precio blanco"> $ <span>850</span></p>
+                    <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                     data-placement="top" title="Negra SF" data-id="12">Agregar  <i class="fas fa-shopping-basket"></i></a>
                     
                 </div>
@@ -300,8 +214,8 @@
                     <h4 class="card-title blanco">Remera verde SF</h4>
                     <h6 class="card-subtitle mb-2 text-muted text-center">XS / S / M / L / XL</h6>
                     <p class="card-text blanco">Remera de algodon 100% color negra con logo, todos los talles</p>
-                    <p class="precio blanco text-center fs-4"> $ <span>850</span></p>
-                    <a href="#" class=" mx-4 btn btn-outline-light agregar-carrito" data-toggle="tooltip"
+                    <p class="precio blanco"> $ <span>850</span></p>
+                    <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                         data-placement="top" title="Verde SF" data-id="13">Agregar  <i class="fas fa-shopping-basket"></i></a>
                     
                 </div>
@@ -312,8 +226,8 @@
                     <h4 class="card-title blanco">Remera Blanca SF</h4>
                     <h6 class="card-subtitle mb-2 text-muted text-center">XS / S / M / L / XL</h6>
                     <p class="card-text  blanco">Remera de algodon 100% color negra con logo, todos los talles</p>
-                    <p class="precio blanco text-center fs-4"> $ <span>800</span></p>
-                    <a href="#" class="btn btn-outline-light agregar-carrito mx-4" data-toggle="tooltip"
+                    <p class="precio blanco"> $ <span>800</span></p>
+                    <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                         data-placement="top" title="Blanca SF" data-id="14">Agregar  <i class="fas fa-shopping-basket"></i></a>
                     
                 </div>
@@ -324,17 +238,23 @@
                     <h4 class="card-title blanco">Barbijo Negro SF</h4>
                     <h6 class="card-subtitle mb-2 text-muted text-center"> S / M / L </h6>
                     <p class="card-text blanco">Barbijo de algodon 100% color negra con logo, todos los talles</p>
-                    <p class="precio blanco text-center fs-4"> $ <span>250</span></p>
-                    <a href="#" class="btn btn-outline-light agregar-carrito mx-4" data-toggle="tooltip"
+                    <p class="precio blanco"> $ <span>250</span></p>
+                    <a href="#" class="btn-sm btn-outline-light agregar-carrito" data-toggle="tooltip"
                         data-placement="top" title="Barbijo" data-id="15">Agregar  <i class="fas fa-shopping-basket"></i></a>
                     
                 </div>
             </div>            
         </div>
     </div>
+        `;
+	},
+};
 
-    <!--Story-->
-    <div class="container story text-center blanco" id="story" >
+const StoryComponent = {
+	render: () => {
+		return `
+        <!--Story-->
+    <div class="container story text-center blanco m-lg-5 p-lg-5 py-5" id="story" >
         <h1 >Asi empezamos...</h1>
         <p>
             Hace poco iniciamos con esto a raíz de crear una BUENA hamburguesa. ¿Sabíamos que nos iba a ir bien? Suponíamos que si, la seguridad no llega por arte de magia, siempre confiamos en nuestro producto, en nuestras ganas de crecer y en cada detalle que aportaba cada uno de nosotros como equipo de trabajo.
@@ -348,8 +268,15 @@ Aca les habla <strong> @minioclaudio_</strong></p>
         <h4 class="fst-italic fw-lighter fs-2"> Unite a nosotros. Hace tu pedido.</h4>
         <p class="fst-italic fw-lighter fs-5 nosotroStory">Bienvenidos a Casa. </p>
     </div>
-    <!--Community-->
-    <div class="container" id="community">
+        `;
+	},
+};
+
+const CommunityComponent = {
+	render: () => {
+		return `
+        <!--Community-->
+    <div class="container m-lg-5 pl-lg-5 py-5" id="community">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
@@ -385,53 +312,267 @@ Aca les habla <strong> @minioclaudio_</strong></p>
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-    </div>   
-
-    <!-- seccion cuenta regresiva al sorteo -->
-    <section class="seccion sorteo container">
-        <h2>Próximo sorteo solo por Instagram <i class="fab fa-instagram"></i></h2>  
-        <h5>Te podes ganar SanFrans Burgers para vos y 5 amigos</h5>
-        <ul class="contador">
-            <li><p id="dias" class="numero"></p>días</li>
-            <li><p id="horas" class="numero"></p>horas</li>
-            <li><p id="minutos" class="numero"></p>minutos</li>
-            <li><p id="segundos" class="numero"></p>segundos</li>
-        </ul>
-    </section>
-
-    <!-- icono whatsapp flotante -->
-    <div>
-        <a href="https://wa.me/1168500414" class="btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
     </div>
-    
+        `;
+	},
+};
 
+const ErrorComponent = {
+	render: () => {
+		return `
+			<h1 class="py-5">Error</h1>
+			<p>La página que estás buscando no existe</p>
+		`;
+	},
+};
 
-    <!--footer-->
-    <footer class="footer py-4">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-12 col-md-4 text-center">
-                    <address class="amarillo fs-4"><i class="fas fa-street-view amarillo fs-3 "></i> Av. XT 555</address>
-                </div>
-                <div class="col-12 col-md-4 text-center ">
-                    <a href="https://wa.me/1168500414" target="_blank" class="amarillo fs-4"><i class="fab fa-whatsapp amarillo fs-3"></i> 156850-0414</a>
-                </div> 
-                <div class="col-12 col-md-4 text-center">
-                    <a href="https://www.instagram.com/sanfranburger/?hl=es-la" target="_blank" class="amarillo fs-4"><i class="fab fa-instagram amarillo fs-3"></i> @sanfranburger</a>
+const routes = [
+	{ path: "/", component: HomeComponent },
+	{ path: "/burger", component: BurgerComponent },
+	{ path: "/promos", component: PromosComponent },
+	{ path: "/teamstore", component: TeamStoreComponent },
+	{ path: "/story", component: StoryComponent },
+	{ path: "/community", component: CommunityComponent },
+];
+
+function obtenerPath() {
+	return location.hash.slice(1) || '/';
+}
+
+function obtenerComponent(path) {
+	return routes.find(route => route.path.match(new RegExp(`^\\${path}$`, 'gm')));
+}
+
+function router() {
+	const path = obtenerPath();
+
+	const { component = ErrorComponent } = obtenerComponent(path) || {};
+
+	const divApp = document.querySelector("#app");
+	divApp.innerHTML = component.render();
+}
+
+//Selectors
+const carrito = document.querySelector("#carrito");
+const contenedorCarrito = document.querySelector("#lista-carrito tbody");
+const listaProductos = document.querySelector("#lista-productos");
+const vaciarCarrito = document.querySelector("#vaciar-carrito");
+
+let articulosCarrito = [];
+
+let dataProductos;
+
+/* Listeners */
+document.addEventListener("DOMContentLoaded", () => {
+	articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+	insertarCarritoHTML();
+
+	//lamada a BD local con Fetch - Async Function
+	cargarBd();
+
+	//Llamada a BD local con AJAX
+	/*
+	$.ajax({
+		url: "/js/productos.json",
+		success: function (data, status, xhr) {
+			console.log("Enlace a BD correcto");
+			dataProductos = data;
+		},
+		error: function (xhr, status, errorThrown) {
+			console.log("Enlace a Bd .json Inexistente");
+		},
+	});
+	*/
+});
+
+listaProductos.addEventListener("click", agregarProducto);
+
+$("#carrito").click(carrito, quitarProducto);
+
+$("#vaciar-carrito").click(vaciarCarrito, borrarCarrito);
+
+$("#formulario").on("submit", filtrarProductos);
+
+$("#pagar").click("pagar", pagoTarjeta);
+
+$(".nosotroStory").fadeIn(6000, animacionFade);
+
+// Funciones
+
+//llamada a BD local con Fetch - async Function
+async function consultarBd() {
+	const resultado = await fetch("../js/productos.json");
+	let datos = await resultado.json();
+	dataProductos = datos;
+}
+
+function cargarBd() {
+	consultarBd();
+}
+
+function animacionFade() {
+	$(".nosotroStory").hide(6000, animacionFade2);
+	function animacionFade2() {
+		$(".nosotroStory").slideDown(6000);
+	}
+}
+
+function pagoTarjeta() {
+	console.log("se realizara el pago con tarjeta Visa");
+}
+
+function cargarListaProductos(productos) {
+	console.log("Se ejecuta cargarListaProductos");
+	productos.forEach((producto, index) => {
+		const { nombre, imagen, precio, id, tipo, description } = producto;
+
+		const divCard = document.createElement("div");
+		divCard.classList.add("col-12", "col-md-3", "py-4");
+		divCard.innerHTML = `
+			<div class="card col-12 col-md-3 py-4" style="width: 16rem;">
+                <img src="${imagen}" class="card-img-top" alt="Birra image">
+                <div class="card-body">
+                <h4 class="card-title text-justify text-center blanco">${nombre}</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center">${tipo}</h6>
+                <p class="card-text text-justify blanco">
+                ${description}</p>
+                <p class="precio blanco"> $ <span>${precio}</span></p>
+                <a href="#" class="btn btn-outline-light agregar-carrito" data-id="${id}">Agregar  <i class="fas fa-shopping-basket"></i></a>
                 </div>
             </div>
-        </div>
-        <p class="text-muted text-center">Todos los derechos reservados. <i class="far fa-copyright blanco fs-5"></i>opyright  2020. Dev. <a href="mailto:corvata@gmail.com" class="blanco" target="_blank">corvata@gmail.com</a>  Gaston Corvalan  <a href="https://github.com/Gastoncorvata/js-practica" target="_blank" class="blanco"><i class="fab fa-github amarillo fs-4"></i></a>  </p>
-    </footer>
+		`;
+		if (index % 4 === 0) {
+			const row = document.createElement("div");
+			row.classList.add("row");
 
-    <!--scripts-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="../js/jquery.animateNumber.js"></script>
-    <script src="../js/jquery.countdown.js"></script>
-    <!-- <script src="../js/productos.js"></script> Se reemplazo por el archivo productos.json-->
-    <script src="../js/proyectoFinal.js"></script>
-    </body>
-</html>
+			listaProductos.appendChild(row);
+			row.appendChild(divCard);
+		} else {
+			const row = document.querySelector("#lista-productos .row:last-child");
+			row.appendChild(divCard);
+		}
+	});
+}
+
+function filtrarProductos(e) {
+	e.preventDefault();
+
+	const busqueda = $("#buscador").val();
+
+	const resultado = dataProductos.filter((producto) =>
+		producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
+	);
+
+	limpiarProductos();
+	cargarListaProductos(resultado);
+}
+
+function agregarProducto(e) {
+	e.preventDefault();
+
+	if (e.target.classList.contains("agregar-carrito")) {
+		const productoSeleccionado = e.target.parentElement.parentElement;
+		obtenerDatos(productoSeleccionado);
+	}
+}
+
+function borrarCarrito() {
+	limpiarCarrito();
+	articulosCarrito = [];
+	guardarStorage();
+}
+
+function quitarProducto(e) {
+	e.preventDefault();
+
+	if (e.target.classList.contains(`borrar-producto`)) {
+		const productoId = e.target.getAttribute("data-id");
+		articulosCarrito = articulosCarrito.filter((producto) => producto.id != productoId);
+		insertarCarritoHTML();
+		guardarStorage();
+	}
+}
+
+function obtenerDatos(producto) {
+	const productoAgregado = {
+		nombre: producto.querySelector("h4").textContent,
+		precio: producto.querySelector(".precio span").textContent,
+		id: producto.querySelector("a").getAttribute("data-id"),
+		cantidad: 1,
+	};
+
+	function comprobar() {
+		const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
+		if (existe) {
+			/* Producto ya existente */
+			const productos = articulosCarrito.map((producto) => {
+				if (producto.id === productoAgregado.id) {
+					producto.cantidad++;
+					return producto;
+				} else {
+					return producto;
+				}
+			});
+			articulosCarrito = [...productos];
+		} else {
+			/* Agrego el producto al carrito */
+			articulosCarrito.push(productoAgregado);
+		}
+	}
+	comprobar();
+	insertarCarritoHTML();
+	guardarStorage();
+}
+
+function guardarStorage() {
+	localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+}
+
+function insertarCarritoHTML() {
+	/* Borrar contenido carrito */
+	limpiarCarrito();
+
+	/* Inserto los productos del carrito en el HTML */
+	articulosCarrito.forEach((producto) => {
+		/* Destructuring sobre el producto */
+		const { nombre, precio, cantidad, id } = producto;
+
+		const row = document.createElement("tr");
+		row.innerHTML = `
+			<td>
+				${nombre}
+			</td>
+			<td>
+				${precio}
+			</td>
+			<td>
+				<a href="#" class="" id="menosProducto"><i class="fas fa-minus menosProducto" data-id="${id}" ></i></a>  ${cantidad}  <a href="#" class="" ><i class="fas fa-plus masProducto"></i></a>
+			</td>
+			<td>
+				<a href="#" class="" > <i class="far fa-trash-alt borrar-producto rojo" data-id="${id}"></i> </a>
+			</td>
+		`;
+
+		contenedorCarrito.appendChild(row);
+	});
+}
+
+function limpiarCarrito() {
+	while (contenedorCarrito.firstChild) {
+		contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+	}
+}
+
+function limpiarProductos() {
+	while (listaProductos.firstChild) {
+		listaProductos.removeChild(listaProductos.firstChild);
+	}
+}
+// Cuenta Regresiva
+$('.contador').countdown('2021/02/20 10:00:00', function(event){
+    $("#dias").html(event.strftime("%D"));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+});
+

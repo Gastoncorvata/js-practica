@@ -78,6 +78,11 @@ footer i {
 footer a:hover{
     color:gold;
 }
+
+footer{
+    background-color: #0a2002;
+    z-index: 10;
+}
 .amarillo{
     color: #ffff00;
 }
@@ -176,3 +181,7 @@ footer a:hover{
     .btn-whatsapp :hover{
         color: #ffff00;
     }
+
+#community {
+    max-height: max-content;
+}

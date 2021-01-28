@@ -83,7 +83,6 @@ function animacionFade() {
 
 function pagoTarjeta() {
 	console.log("se realizara el pago con tarjeta Visa");
-	window.open("../html/pagar.html");
 }
 
 function cargarListaProductos(productos) {
@@ -211,7 +210,7 @@ function insertarCarritoHTML() {
 				${precio}
 			</td>
 			<td>
-				<a href="#" class="" id="menosProducto"><i class="fas fa-minus menosProducto" data-id="${id}" ></i></a>  ${cantidad}  <a href="#" class="" ><i class="fas fa-plus masProducto"></i></a>
+				<a href="#" class="" id="menosProducto"></a>  ${cantidad}  <a href="#" class="" ></a>
 			</td>
 			<td>
 				<a href="#" class="" > <i class="far fa-trash-alt borrar-producto rojo" data-id="${id}"></i> </a>
@@ -240,3 +239,38 @@ $('.contador').countdown('2021/02/20 10:00:00', function(event){
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
 });
+
+
+/*-------------------------------------------------------------------------------------
+---------------------                                         -----------------------
+-------------------------------------------------------------------------------------
+function buscarItem(id) {
+    const encontrarItem = carrito.find((item) => item.idProd == id)
+    return encontrarItem
+}
+
+if (e.target.classList.contains('masProducto')) {
+	let itemCart = e.target;
+	let id = Number(itemCart.dataset.id);
+
+	let input = itemCart.nextElementSibling; // Sibling de la flecha
+	let inputCantidad = Number(itemCart.nextElementSibling.value); // extraemos el valor en Numero
+	let item = buscarItem(id); // buscamos nustro prod en el array
+	inputCantidad++;
+	item.cantidadProd ++;
+
+	input.value = inputCantidad;
+
+} else if (e.target.classList.contains('menosProducto')) {
+
+	let itemCart = e.target;
+	let id = Number(itemCart.dataset.id);
+
+	let input = itemCart.previousSibling.previousSibling; // Sibling de la flecha
+	let inputCantidad = Number(itemCart.previousSibling.previousSibling.value); // extraemos el valor en Numero
+	let item = buscarItem(id); // buscamos nustro prod en el array
+	inputCantidad--;
+	item.cantidadProd --;
+}
+
+*/
