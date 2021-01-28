@@ -166,6 +166,7 @@ function obtenerDatos(producto) {
 	};
 
 	function comprobar() {
+		swal("Excelente!", "Producto agregado al carrito de compras!", "success");
 		const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
 		if (existe) {
 			/* Producto ya existente */
