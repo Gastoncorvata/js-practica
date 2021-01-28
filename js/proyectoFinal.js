@@ -1,36 +1,28 @@
-//Selectors
+///////////////////////////////////////////////////////////////////////////////////
+/* --------------------------  Selectors   --------------------------------------*/
+//////////////////////////////////////////////////////////////////////////////////
+
 const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
-//const minusProducto = document.querySelector("#menosProducto");
-//const masProducto = document.querySelector(".masProducto");
 
 let articulosCarrito = [];
 
 let dataProductos;
 
-/* Listeners */
+
+////////////////////////////////////////////////////////////////////////////////////
+/* ---------------------------- Listeners ----------------------------------------*/
+////////////////////////////////////////////////////////////////////////////////////
+
 document.addEventListener("DOMContentLoaded", () => {
 	articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 	insertarCarritoHTML();
 
-	//lamada a BD local con Fetch - Async Function
+/*--------------   Llamada a BD local con Fetch - Async Function   ---------------*/
 	cargarBd();
 
-	//Llamada a BD local con AJAX
-	/*
-	$.ajax({
-		url: "/js/productos.json",
-		success: function (data, status, xhr) {
-			console.log("Enlace a BD correcto");
-			dataProductos = data;
-		},
-		error: function (xhr, status, errorThrown) {
-			console.log("Enlace a Bd .json Inexistente");
-		},
-	});
-	*/
 });
 
 listaProductos.addEventListener("click", agregarProducto);
@@ -45,25 +37,12 @@ $("#pagar").click("pagar", pagoTarjeta);
 
 $(".nosotroStory").fadeIn(6000, animacionFade);
 
-// --------  agregar y restar producto usando (+) y (-) ---------
 
-//$("#menosProducto").click(minusProducto, restarProducto);
-//$(".masProducto").click(masProducto, sumarProducto);
+/////////////////////////////////////////////////////////////////////////////////////////
+/* ---------------------------------   Funciones   ------------------------------------*/
+////////////////////////////////////////////////////////////////////////////////////////
 
-//minusProducto.addEventListener("click",restarProducto);
-//masProducto.addEventListener("click", sumarProducto);
-
-/*function restarProducto() {
-	console.log("menosProducto");
-	alert("restar");
-}
-function sumarProducto(){
-	console.log("masProducto");
-}*/
-
-// Funciones
-
-//llamada a BD local con Fetch - async Function
+/* -------------- llamada a BD local con Fetch - async Function  ----------------------*/
 async function consultarBd() {
 	const resultado = await fetch("../js/productos.json");
 	let datos = await resultado.json();
@@ -233,45 +212,10 @@ function limpiarProductos() {
 		listaProductos.removeChild(listaProductos.firstChild);
 	}
 }
-// Cuenta Regresiva
+/* ----------- Cuenta Regresiva Sorteo  ------------------------*/
 $('.contador').countdown('2021/02/20 10:00:00', function(event){
     $('#dias').html(event.strftime('%D'));
     $('#horas').html(event.strftime('%H'));
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
 });
-
-
-/*-------------------------------------------------------------------------------------
----------------------                                         -----------------------
--------------------------------------------------------------------------------------
-function buscarItem(id) {
-    const encontrarItem = carrito.find((item) => item.idProd == id)
-    return encontrarItem
-}
-
-if (e.target.classList.contains('masProducto')) {
-	let itemCart = e.target;
-	let id = Number(itemCart.dataset.id);
-
-	let input = itemCart.nextElementSibling; // Sibling de la flecha
-	let inputCantidad = Number(itemCart.nextElementSibling.value); // extraemos el valor en Numero
-	let item = buscarItem(id); // buscamos nustro prod en el array
-	inputCantidad++;
-	item.cantidadProd ++;
-
-	input.value = inputCantidad;
-
-} else if (e.target.classList.contains('menosProducto')) {
-
-	let itemCart = e.target;
-	let id = Number(itemCart.dataset.id);
-
-	let input = itemCart.previousSibling.previousSibling; // Sibling de la flecha
-	let inputCantidad = Number(itemCart.previousSibling.previousSibling.value); // extraemos el valor en Numero
-	let item = buscarItem(id); // buscamos nustro prod en el array
-	inputCantidad--;
-	item.cantidadProd --;
-}
-
-*/
