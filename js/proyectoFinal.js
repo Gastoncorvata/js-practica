@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 /* --------------------------  Selectors   --------------------------------------*/
 //////////////////////////////////////////////////////////////////////////////////
-
 const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
@@ -10,7 +9,6 @@ const vaciarCarrito = document.querySelector("#vaciar-carrito");
 let articulosCarrito = [];
 
 let dataProductos;
-
 
 ////////////////////////////////////////////////////////////////////////////////////
 /* ---------------------------- Listeners ----------------------------------------*/
@@ -40,7 +38,7 @@ $(".nosotroStory").fadeIn(6000, animacionFade);
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /* ---------------------------------   Funciones   ------------------------------------*/
-////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
 
 /* -------------- llamada a BD local con Fetch - async Function  ----------------------*/
 async function consultarBd() {
@@ -145,7 +143,7 @@ function obtenerDatos(producto) {
 	};
 
 	function comprobar() {
-		swal("Excelente!", "Producto agregado al carrito de compras!", "success");
+		swal("Genial!", "Producto agregado al carrito de compras!", "success");
 		const existe = articulosCarrito.some((producto) => producto.id == productoAgregado.id);
 		if (existe) {
 			/* Producto ya existente */
@@ -153,7 +151,7 @@ function obtenerDatos(producto) {
 				if (producto.id === productoAgregado.id) {
 					producto.cantidad++;
 					return producto;
-				} else {
+				} else{
 					return producto;
 				}
 			});
@@ -173,12 +171,12 @@ function guardarStorage() {
 }
 
 function insertarCarritoHTML() {
-	/* Borrar contenido carrito */
+	/* Borra el contenido del carrito */
 	limpiarCarrito();
 
-	/* Inserto los productos del carrito en el HTML */
+	/* Inserta los productos del carrito en el HTML */
 	articulosCarrito.forEach((producto) => {
-		/* Destructuring sobre el producto */
+		
 		const { nombre, precio, cantidad, id } = producto;
 
 		const row = document.createElement("tr");
@@ -190,7 +188,7 @@ function insertarCarritoHTML() {
 				${precio}
 			</td>
 			<td>
-				<a href="#" class="" id="menosProducto"></a>  ${cantidad}  <a href="#" class="" ></a>
+				<i class="far fa-minus-square menos" id="restarProducto" ></i> ${cantidad} <i class="far fa-plus-square" id="sumarProducto"></i>
 			</td>
 			<td>
 				<a href="#" class="" > <i class="far fa-trash-alt borrar-producto rojo" data-id="${id}"></i> </a>
